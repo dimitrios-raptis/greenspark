@@ -48,6 +48,12 @@
     color: palette('brand', 'secondary');
     justify-content: center;
   }
+
+  &__error {
+    @include font-secondary;
+    color: palette('brand', 'primary');
+    margin-bottom: 3rem;
+  }
 }
 
 

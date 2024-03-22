@@ -6,6 +6,7 @@ import { Oval } from "react-loader-spinner";
 const WidgetsSection = () => {
   const [widgetData, setWidgetData] = useState<WidgetData[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("Sorry, something went wrong. Please try again later.");
 
   const apiUrl = process.env.REACT_APP_API_URL || "";
 
@@ -16,11 +17,17 @@ const WidgetsSection = () => {
   const fetchWidgets = async () => {
     try {
       const response = await fetch(apiUrl);
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch widgets: " + response.status);
+      }
+
       const data = await response.json();
       setWidgetData(data);
       setLoading(false);
     } catch (error) {
       console.error("Error fetching widgets:", error);
+      setError("Sorry, something went wrong. Please try again later.");
       setLoading(false);
     }
   };
@@ -34,6 +41,7 @@ const WidgetsSection = () => {
       {loading ? (
         <>
           <h3 className='widgetsSection__title'>Loading...</h3>
+          {error && <p className='widgetsSection__error'>{error}</p>}
           <Oval
             visible={true}
             height="40"
