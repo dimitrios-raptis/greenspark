@@ -36,6 +36,11 @@
 
     @include mq(tablet) {
       flex-direction: row;
+      gap: 2rem;
+    }
+
+    @include mq(tablet-wide) {
+      gap: 5rem;
     }
   }
 
