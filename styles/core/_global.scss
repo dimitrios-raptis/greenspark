@@ -25,10 +25,10 @@ html {
 }
 
 body {
-  background-color: palette('fill','primary');
   color: palette('brand','quaternary');
   position: relative;
   font-size: 1.6rem;
+  background-color: palette('default','white');
 }
 
 strong {

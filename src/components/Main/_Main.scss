@@ -1,6 +1,6 @@
 .main {
   background-color: palette('default','white');
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   padding: 5rem;
+  @include center(both);
 }

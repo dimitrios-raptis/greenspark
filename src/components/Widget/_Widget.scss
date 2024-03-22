@@ -163,11 +163,11 @@
   &--beige {
     .widget__header {
       background-color: palette('brand', 'tertiary');
-      color: palette('default', 'black');
+      color: palette('brand', 'secondary');
     }
 
     .widget__logo {
-      fill: palette('default', 'black');
+      fill: palette('brand', 'secondary');
     }
   }
 
