@@ -34,7 +34,7 @@ const OptionProfile = ({ id, linked, widgetData, handleDataChange }:Props) => {
       </div>
       <div className='widget__checkbox'>
         {linked ? (
-          <div onClick={() => handleClick(id)}>
+          <div onClick={() => handleClick(id)}  data-testid="option-profile-checkbox">
             <Checkbox size="1.8rem" className="widget__checkbox-icon"  />
           </div>
         ) : (
