@@ -1,0 +1,23 @@
+ // Cabin Regular
+@font-face {
+    font-family: 'cabin-regular';
+    src: url('/assets/fonts/Cabin/Cabin-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// // Cabin Bold
+@font-face {
+    font-family: 'cabin-bold';
+    src: url('/assets/fonts/Cabin/Cabin-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@mixin font-primary() {
+  font-family: 'cabin-regular';
+}
+
+@mixin font-secondary() {
+  font-family: 'cabin-bold';
+}

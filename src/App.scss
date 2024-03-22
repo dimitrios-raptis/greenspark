@@ -1,0 +1,8 @@
+// Normalize
+@import "node_modules/normalize-scss/sass/_normalize.scss";
+// Mixins
+@import '../styles/mixins/mixins';
+// Core
+@import '../styles/core/core';
+// Components
+@import './components/components';

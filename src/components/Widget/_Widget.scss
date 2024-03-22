@@ -1,0 +1,195 @@
+.widget {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  border-radius: .6rem;
+  flex: 1 0 auto;
+  box-shadow: 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.02);
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: .6rem;
+    padding: 1rem;
+    @include font-secondary();
+    background-color: palette('default', 'black');
+    color: palette('default', 'white');
+    width: 100%;
+  }
+
+  &__super-heading {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin-bottom: .3rem;
+  }
+
+  &__heading {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+
+  &__options-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__option-text-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__option-text {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: palette('brand', 'secondary');
+
+    &::selection {
+      background: none;
+    }
+  }
+
+  &__checkbox {
+    position: relative;
+    width: 1.8rem;
+    height: 1.8rem;
+
+    &::after {
+      content: "";
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        background-color: rgba(palette('brand', 'secondary'), .2);
+        border-radius: 50%;
+        @include center(both);
+        z-index: 0;
+        opacity: 0;
+        transition: opacity ease-out .3s;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+
+  &__checkbox-icon {
+    position: relative;
+    fill: palette('brand', 'secondary');
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  &__option-colors {
+    display: flex;
+    gap: .3rem;
+  }
+
+  &__color {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: .2rem solid transparent;
+    cursor: pointer;
+    transition: opacity ease-out .3s;
+
+    &:hover {
+      opacity: .8;
+    }
+
+    &--blue {
+      background-color: palette('brand', 'primary');
+      border-color: palette('brand', 'primary');
+    }
+
+    &--green {
+      background-color: palette('brand', 'secondary');
+      border-color: palette('brand', 'secondary');
+    }
+
+    &--beige {
+      background-color: palette('brand', 'tertiary');
+      border-color: palette('brand', 'tertiary');
+    }
+
+    &--white {
+      background-color: palette('default', 'white');
+      border-color: palette('default', 'white');
+    }
+
+    &--black {
+      background-color: palette('default', 'black');
+      border-color: palette('default', 'black');
+    }
+
+    &--selected {
+      border-color: palette('fill', 'secondary');
+    }
+  }
+
+  // Color Theming //
+  &--blue {
+    .widget__header {
+      background-color: palette('brand', 'primary');
+      color: palette('default', 'white');
+    }
+
+    .widget__logo {
+      fill: palette('default', 'white');
+    }
+  }
+
+  &--green {
+    .widget__header {
+      background-color: palette('brand', 'secondary');
+      color: palette('default', 'white');
+    }
+
+    .widget__logo {
+      fill: palette('default', 'white');
+    }
+  }
+
+  &--beige {
+    .widget__header {
+      background-color: palette('brand', 'tertiary');
+      color: palette('default', 'black');
+    }
+
+    .widget__logo {
+      fill: palette('default', 'black');
+    }
+  }
+
+  &--white {
+    .widget__header {
+      background-color: palette('default', 'white');
+      color: palette('default', 'black');
+    }
+
+    .widget__logo {
+      fill: palette('default', 'black');
+    }
+  }
+
+  &--black {
+    .widget__header {
+      background-color: palette('default', 'black');
+      color: palette('default', 'white');
+    }
+
+    .widget__logo {
+      fill: palette('default', 'white');
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// Example: @include font-weight(light); //
+@mixin font-weight($weight) {
+  $weights: (
+    light: 300,
+    regular: 400,
+    semi-bold: 700,
+    bold: 800
+  );
+
+  $output: $weight;
+  @if map-has-key($weights, $weight) {
+    $output: map-get($weights, $weight);
+  }
+
+  font-weight: $output;
+}
